@@ -70,7 +70,10 @@ def preprocess_graph():
     elif 'DB_USER' in environ and 'DB_PASS' in environ:
         db_user = environ['DB_USER']
         db_pass = environ['DB_PASS']
-        download_drugbank_data(sources_dp=sources_dp, srcs_cp=sources_urls, username=db_user, password=db_pass)
+    else:
+        db_user = ''
+        db_pass = ''        
+    download_drugbank_data(sources_dp=sources_dp, srcs_cp=sources_urls, username=db_user, password=db_pass)
     # download kegg source data
     download_kegg_data(sources_dp=sources_dp, srcs_cp=sources_urls)
 

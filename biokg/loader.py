@@ -220,7 +220,8 @@ def download_drugbank_data(sources_dp, srcs_cp, username, password):
         srcs_cp["drugbank"]["drugbank_all_full_database"], 
         full_database_fp, 
         username = username, 
-        password = password
+        password = password,
+        bypass_md5 = True # pass the md5 check
     )
 
     print_bold_line()
